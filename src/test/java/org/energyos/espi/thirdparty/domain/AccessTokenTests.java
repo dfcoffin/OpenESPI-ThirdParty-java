@@ -25,7 +25,7 @@ import java.io.IOException;
 import org.energyos.espi.common.domain.AccessToken;
 import org.junit.Test;
 import org.springframework.http.HttpInputMessage;
-import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 
 public class AccessTokenTests {
 
@@ -44,7 +44,7 @@ public class AccessTokenTests {
 										+ "\"authorizationURI\":\"AuthorizationURI\""
 										+ "}").getBytes()));
 
-		MappingJacksonHttpMessageConverter converter = new MappingJacksonHttpMessageConverter();
+		MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
 
 		converter.read(AccessToken.class, message);
 	}
